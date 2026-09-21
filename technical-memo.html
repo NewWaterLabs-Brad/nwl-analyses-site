@@ -72,8 +72,13 @@ if(cached&&cached.split(":")[0]===SALT){
 document.getElementById("f").addEventListener("submit",async function(ev){
   ev.preventDefault();
   var b=document.getElementById("b"),m=document.getElementById("msg");
+  // Browsers expose decryption only on https pages, so say that, not "wrong passphrase".
+  if(!window.crypto||!crypto.subtle){m.textContent="This page opens only over https. Use https://"+location.host+location.pathname;return;}
   b.disabled=true;m.textContent="";
-  try{await open(await derive(document.getElementById("p").value.trim()));}
+  var key;
+  try{key=await derive(document.getElementById("p").value.trim());}
+  catch(e){m.textContent="This browser could not process the passphrase.";b.disabled=false;return;}
+  try{await open(key);}
   catch(e){m.textContent="That passphrase does not open this document.";b.disabled=false;}
 });
 })();
