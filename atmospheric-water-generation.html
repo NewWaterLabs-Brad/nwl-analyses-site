@@ -62,7 +62,12 @@ function show(plain){
 var cached=null;
 try{cached=sessionStorage.getItem(KEYNAME);}catch(e){}
 if(cached&&cached.split(":")[0]===SALT){
-  open(b64(cached.split(":")[1]).buffer).catch(function(){try{sessionStorage.removeItem(KEYNAME);}catch(e){}});
+  // Hide the box while the remembered key is tried. Replace the document only
+  // after parsing ends, or document.write appends to the lock page instead.
+  var form=document.getElementById("f");form.style.visibility="hidden";
+  var go=function(){open(b64(cached.split(":")[1]).buffer).catch(function(){
+    try{sessionStorage.removeItem(KEYNAME);}catch(e){}form.style.visibility="";});};
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",go);else go();
 }
 document.getElementById("f").addEventListener("submit",async function(ev){
   ev.preventDefault();
