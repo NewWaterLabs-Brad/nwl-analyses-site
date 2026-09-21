@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>New Water Labs</title>
+<style>
+:root{color-scheme:light;--ground:#F4F6F8;--surface:#FFFFFF;--ink:#0E141B;--muted:#69747F;--rule:#DCE2E9;--accent:#4F3FD0;--bad:#B42318}
+@media (prefers-color-scheme: dark){:root{color-scheme:dark;--ground:#0E141B;--surface:#161E27;--ink:#E7ECF1;--muted:#98A3AE;--rule:#26313D;--accent:#A99BFF;--bad:#F97066}}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.5 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+form{max-width:360px;margin:18vh auto 0;padding:24px 16px}
+h1{font-size:20px;font-weight:600;margin:0 0 16px}
+label{display:block;color:var(--muted);font-size:14px;margin-bottom:6px}
+input{box-sizing:border-box;width:100%;padding:10px 12px;font:inherit;color:inherit;background:var(--surface);border:1px solid var(--rule);border-radius:6px}
+button{margin-top:12px;padding:10px 16px;font:inherit;font-weight:500;color:#fff;background:var(--accent);border:0;border-radius:6px;cursor:pointer}
+button:disabled{opacity:.6;cursor:default}
+#msg{min-height:1.5em;margin-top:12px;font-size:14px;color:var(--bad)}
+</style>
+</head>
+<body>
+<form id="f">
+<h1>New Water Labs</h1>
+<label for="p">Passphrase</label>
+<input id="p" type="password" autocomplete="current-password" autofocus required>
+<button id="b" type="submit">Open</button>
+<div id="msg" role="alert"></div>
+</form>
+<script id="payload" type="application/octet-stream" data-kind="html" data-name="">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</script>
+<script>
+(function(){
+var SALT="d62ec7d3d62cdd38d6e87940a95cc809", ITER=600000, KEYNAME="nwl-key";
+var el=document.getElementById("payload");
+function b64(s){var r=atob(s),u=new Uint8Array(r.length);for(var i=0;i<r.length;i++)u[i]=r.charCodeAt(i);return u;}
+function hex(s){var u=new Uint8Array(s.length/2);for(var i=0;i<u.length;i++)u[i]=parseInt(s.substr(i*2,2),16);return u;}
+function toB64(buf){var u=new Uint8Array(buf),s="";for(var i=0;i<u.length;i++)s+=String.fromCharCode(u[i]);return btoa(s);}
+async function derive(pass){
+  var base=await crypto.subtle.importKey("raw",new TextEncoder().encode(pass),"PBKDF2",false,["deriveBits"]);
+  return crypto.subtle.deriveBits({name:"PBKDF2",hash:"SHA-256",salt:hex(SALT),iterations:ITER},base,256);
+}
+async function open(raw){
+  var key=await crypto.subtle.importKey("raw",raw,"AES-GCM",false,["decrypt"]);
+  var data=b64(el.textContent.trim());
+  var plain=await crypto.subtle.decrypt({name:"AES-GCM",iv:data.slice(0,12)},key,data.slice(12));
+  try{sessionStorage.setItem(KEYNAME,SALT+":"+toB64(raw));}catch(e){}
+  if(el.dataset.kind==="pdf"){show(plain);return;}
+  var text=new TextDecoder().decode(plain);
+  document.open();document.write(text);document.close();
+}
+function show(plain){
+  var url=URL.createObjectURL(new Blob([plain],{type:"application/pdf"}));
+  document.body.innerHTML="";
+  document.body.style.margin="0";
+  var bar=document.createElement("div");
+  bar.style.cssText="padding:8px 16px;font:14px ui-sans-serif,system-ui,sans-serif";
+  var a=document.createElement("a");a.href=url;a.download=el.dataset.name;a.textContent="Download the PDF";
+  bar.appendChild(a);
+  var f=document.createElement("iframe");f.src=url;f.title="Technical memo";
+  f.style.cssText="display:block;border:0;width:100%;height:calc(100vh - 40px)";
+  document.body.appendChild(bar);document.body.appendChild(f);
+}
+var cached=null;
+try{cached=sessionStorage.getItem(KEYNAME);}catch(e){}
+if(cached&&cached.split(":")[0]===SALT){
+  open(b64(cached.split(":")[1]).buffer).catch(function(){try{sessionStorage.removeItem(KEYNAME);}catch(e){}});
+}
+document.getElementById("f").addEventListener("submit",async function(ev){
+  ev.preventDefault();
+  var b=document.getElementById("b"),m=document.getElementById("msg");
+  b.disabled=true;m.textContent="";
+  try{await open(await derive(document.getElementById("p").value.trim()));}
+  catch(e){m.textContent="That passphrase does not open this document.";b.disabled=false;}
+});
+})();
+</script>
+</body>
+</html>
